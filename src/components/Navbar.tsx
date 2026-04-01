@@ -83,9 +83,9 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 1, height: 0 }}
+            initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 1, height: 0 }}
+            exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-[#0d0620]/98 backdrop-blur-md border-t border-[#00d4ff]/20"
           >
             <div className="px-4 py-4 flex flex-col gap-2">

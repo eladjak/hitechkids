@@ -76,7 +76,7 @@ export default function ForParents() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
@@ -97,7 +97,7 @@ export default function ForParents() {
           {safetyFeatures.map((feature, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
@@ -112,7 +112,7 @@ export default function ForParents() {
 
         {/* Schedule */}
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-16"
@@ -124,7 +124,7 @@ export default function ForParents() {
             {schedule.map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 1, x: -20 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
@@ -143,20 +143,20 @@ export default function ForParents() {
 
         {/* Pricing */}
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <h3 className="text-3xl font-black text-white text-center mb-4">
             💰 מחירים ומסלולים
           </h3>
-          <p className="text-center text-white/60 mb-10">הרשמה מוקדמת - 10% הנחה! בתוקף עד 1.5.2025</p>
+          <p className="text-center text-white/60 mb-10">הרשמה מוקדמת - 10% הנחה! בתוקף עד 1.6.2026</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pricingPlans.map((plan, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 1, y: 30 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}

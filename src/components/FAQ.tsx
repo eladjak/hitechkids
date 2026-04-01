@@ -53,7 +53,7 @@ export default function FAQ() {
     <section id="faq" className="py-20 bg-[#0d0620]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
@@ -73,7 +73,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
@@ -99,9 +99,9 @@ export default function FAQ() {
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
-                    initial={{ height: 0, opacity: 1 }}
+                    initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
@@ -117,7 +117,7 @@ export default function FAQ() {
         </div>
 
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mt-16 text-center bg-gradient-to-r from-[#00d4ff]/10 via-[#ff1493]/10 to-[#ffe600]/10 border border-white/10 rounded-2xl p-10"
@@ -127,7 +127,7 @@ export default function FAQ() {
           <p className="text-white/60 mb-6">אנחנו זמינים בוואטסאפ ובאימייל</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="https://wa.me/9720501234567"
+              href="https://wa.me/9720525427474"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#25d366] text-white font-bold rounded-full hover:opacity-90 transition-opacity"
@@ -135,7 +135,7 @@ export default function FAQ() {
               💬 WhatsApp
             </a>
             <a
-              href="mailto:info@hitechkids.co.il"
+              href="mailto:eladhiteclearning@gmail.com"
               className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#00d4ff] text-[#00d4ff] font-bold rounded-full hover:bg-[#00d4ff]/10 transition-colors"
             >
               ✉️ אימייל

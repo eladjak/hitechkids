@@ -34,13 +34,34 @@ export default function Registration() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [error, setError] = useState<string | null>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
-    await new Promise((r) => setTimeout(r, 1200));
-    setSubmitted(true);
-    setLoading(false);
+    setError(null);
+
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "שגיאה בשליחת הטופס");
+        setLoading(false);
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError("שגיאה בחיבור לשרת. נסו שוב מאוחר יותר.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -58,7 +79,7 @@ export default function Registration() {
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-12"
@@ -75,7 +96,7 @@ export default function Registration() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 1, y: 40 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
@@ -84,7 +105,7 @@ export default function Registration() {
         >
           {submitted ? (
             <motion.div
-              initial={{ opacity: 1, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-12"
             >
@@ -215,6 +236,12 @@ export default function Registration() {
                 />
               </div>
 
+              {error && (
+                <div className="bg-red-500/20 border border-red-500/40 rounded-xl px-4 py-3 text-red-300 text-sm text-center">
+                  {error}
+                </div>
+              )}
+
               <motion.button
                 type="submit"
                 disabled={loading}
@@ -227,7 +254,7 @@ export default function Registration() {
               </motion.button>
 
               <p className="text-center text-white/40 text-sm">
-                📞 מעדיפים לדבר? התקשרו: 050-000-0000
+                📞 מעדיפים לדבר? התקשרו: 052-542-7474
               </p>
             </form>
           )}

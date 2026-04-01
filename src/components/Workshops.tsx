@@ -68,7 +68,7 @@ export default function Workshops() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
@@ -89,7 +89,7 @@ export default function Workshops() {
           {workshops.map((workshop, index) => (
             <motion.div
               key={workshop.id}
-              initial={{ opacity: 1, y: 40 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}

@@ -2,14 +2,38 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "הייטקידס - קייטנת טכנולוגיה לילדים",
-  description: "קייטנת הייטקידס - סדנאות AI, קוד, כתיבה יצירתית ורובוטיקה לילדים בגילאי 8-15. קיץ 2025.",
-  keywords: "קייטנת קוד, קייטנת טכנולוגיה, AI לילדים, רובוטיקה, קידוד לילדים",
+  title: "הייטקידס - קייטנת טכנולוגיה לילדים | קיץ 2026",
+  description: "קייטנת הייטקידס - סדנאות AI, קוד, כתיבה יצירתית ורובוטיקה לילדים בגילאי 8-15. קבוצות קטנות, מדריכים מקצועיים, קיץ 2026.",
+  keywords: "קייטנת קוד, קייטנת טכנולוגיה, AI לילדים, רובוטיקה, קידוד לילדים, קייטנת קיץ 2026, הייטקידס",
+  metadataBase: new URL("https://hitechkids.eladjak.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "הייטקידס - קייטנת טכנולוגיה לילדים",
-    description: "הקייטנה הכי כיפית לילדים - AI, קוד, רובוטים ויצירה!",
+    description: "הקייטנה הכי כיפית לילדים - AI, קוד, רובוטים ויצירה! קיץ 2026",
     locale: "he_IL",
     type: "website",
+    url: "https://hitechkids.eladjak.com",
+    siteName: "הייטקידס",
+    images: [
+      {
+        url: "/images/hitechkids-hero-wide.jpg",
+        width: 1200,
+        height: 630,
+        alt: "קייטנת הייטקידס - סדנאות טכנולוגיה לילדים",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "הייטקידס - קייטנת טכנולוגיה לילדים",
+    description: "AI, קוד, רובוטיקה וכתיבה יצירתית - קיץ 2026!",
+    images: ["/images/hitechkids-hero-wide.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

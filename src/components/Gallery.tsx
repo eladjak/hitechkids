@@ -42,7 +42,7 @@ export default function Gallery() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
@@ -63,7 +63,7 @@ export default function Gallery() {
           {galleryItems.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
@@ -91,9 +91,9 @@ export default function Gallery() {
         {/* Modal */}
         {selected !== null && (
           <motion.div
-            initial={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             onClick={() => setSelected(null)}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
           >
@@ -125,7 +125,7 @@ export default function Gallery() {
 
         {/* Testimonials */}
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mt-16"
@@ -137,7 +137,7 @@ export default function Gallery() {
             {testimonials.map((t, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 1, y: 20 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}

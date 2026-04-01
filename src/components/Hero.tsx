@@ -51,19 +51,19 @@ export default function Hero() {
           <div className="text-right">
             {/* Badge */}
             <motion.div
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="inline-flex items-center gap-2 bg-[#00d4ff]/20 border border-[#00d4ff]/40 rounded-full px-4 py-2 mb-6"
             >
-              <span className="text-[#00d4ff] font-bold text-sm">קיץ 2025 ✨</span>
+              <span className="text-[#00d4ff] font-bold text-sm">קיץ 2026 ✨</span>
               <span className="text-white/60 text-sm">|</span>
               <span className="text-[#39ff14] text-sm font-medium">מקומות מוגבלים!</span>
             </motion.div>
 
             {/* Main headline */}
             <motion.h1
-              initial={{ opacity: 1, y: 30 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6"
@@ -78,7 +78,7 @@ export default function Hero() {
 
             {/* Subtitle */}
             <motion.p
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed font-medium"
@@ -94,7 +94,7 @@ export default function Hero() {
 
             {/* Stats row */}
             <motion.div
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               className="flex flex-wrap gap-6 mb-8"
@@ -113,7 +113,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-4"
@@ -135,7 +135,7 @@ export default function Hero() {
 
           {/* Hero image */}
           <motion.div
-            initial={{ opacity: 1, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.7 }}
             className="relative hidden lg:block"
@@ -167,7 +167,7 @@ export default function Hero() {
 
         {/* Scrolling banner */}
         <motion.div
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
           className="mt-16 overflow-hidden rounded-xl bg-gradient-to-r from-[#00d4ff]/20 via-[#ff1493]/20 to-[#ffe600]/20 border border-white/10 py-4"
