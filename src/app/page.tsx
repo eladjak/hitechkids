@@ -6,6 +6,7 @@ import ForParents from "@/components/ForParents";
 import Registration from "@/components/Registration";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -37,7 +38,8 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main>
+      <WhatsAppFloat />
+      <main id="main-content">
         <Navbar />
         <Hero />
         <Workshops />

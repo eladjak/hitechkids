@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { supabase } from "@/lib/supabase";
 
 type RegistrationData = {
   childName: string;
@@ -39,18 +40,24 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // TODO: Connect to Supabase when ready
-  // const supabase = createClient(...)
-  // await supabase.from('registrations').insert(data)
-
-  console.log("[HiTechKids] New registration:", {
-    childName: data.childName,
-    childAge: data.childAge,
-    parentName: data.parentName,
+  // Save to Supabase
+  const { error: dbError } = await supabase.from("registrations").insert({
+    child_name: data.childName,
+    child_age: age,
+    parent_name: data.parentName,
     phone: phoneClean,
+    email: data.email || null,
     workshop: data.workshop,
-    timestamp: new Date().toISOString(),
+    notes: data.notes || null,
   });
+
+  if (dbError) {
+    console.error("[HiTechKids] Supabase error:", dbError.message);
+    return NextResponse.json(
+      { error: "שגיאה בשמירת ההרשמה. נסו שוב." },
+      { status: 500 }
+    );
+  }
 
   return NextResponse.json({ success: true, message: "ההרשמה התקבלה בהצלחה!" });
 }

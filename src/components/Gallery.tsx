@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const galleryItems = [
   { src: "/images/gallery/kids-learning-ai.png", alt: "ילדים לומדים AI בקייטנה הייטקידס", caption: "לומדים AI - כיף אמיתי! 🤖" },
@@ -36,6 +36,16 @@ const testimonials = [
 
 export default function Gallery() {
   const [selected, setSelected] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && selected !== null) {
+        setSelected(null);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selected]);
 
   return (
     <section id="gallery" className="py-20 bg-[#0a0118]">
@@ -96,6 +106,9 @@ export default function Gallery() {
             exit={{ opacity: 0 }}
             onClick={() => setSelected(null)}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-label="תמונה מוגדלת"
           >
             <motion.div
               initial={{ scale: 0.8 }}
