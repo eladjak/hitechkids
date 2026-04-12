@@ -1,3 +1,11 @@
+<div align="center">
+
+⭐ If you find this project useful, please star it! ⭐
+
+[🇮🇱 עברית](README-HE.md)
+
+</div>
+
 # HiTechKids
 
 A landing page for HiTechKids -- a technology summer camp for children featuring AI, coding, robotics, and creative writing workshops. Built with a modern Hebrew RTL design and powered by Supabase for registration management.
