@@ -36,3 +36,24 @@
 bun install && bun run dev
 bunx tsc --noEmit && bun run build
 ```
+
+
+---
+
+## 🏭 AI Factory / Agent Network (Sprint 5, Apr 2026)
+
+See `~/.claude/AI_FACTORY_ARCHITECTURE.md` for full details.
+
+**Delegator API** (http://37.27.31.1:3900) — single entry point for content/research/messaging:
+- `/pipeline/full` — research + landing page + email + social post in 78s
+- `/content-studio/generate` — AI content pipeline (Sanity + 10 brands)
+- `/sms/send` — Rav Messer Israeli SMS
+- `/postiz/post` — multi-platform social publish
+- `/drive/search`, `/calendar/check` — Google (OAuth configured)
+
+**10 agents**: Kami (WA :3001), Kaylee (infra :18789), Claude Code, CrewAI (:8001), Dashboard, + Hermes / n8n / Ollama / Uptime Kuma / Coolify
+
+**Public URLs**: kami.eladjak.com · content-social.eladjak.com · pages.fullstack-eladjak.co.il · studio.fullstack-eladjak.co.il
+
+When building features that need content, publishing, messaging, or research — call the delegator instead of reimplementing.
+
