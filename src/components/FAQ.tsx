@@ -127,7 +127,7 @@ export default function FAQ() {
           <p className="text-white/60 mb-6">אנחנו זמינים בוואטסאפ ובאימייל</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="https://wa.me/9720525427474"
+              href="https://wa.me/972525427474?text=שלום%20אלעד%2C%20פניתי%20דרך%20אתר%20HiTechKids"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#25d366] text-white font-bold rounded-full hover:opacity-90 transition-opacity"

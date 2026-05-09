@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function WhatsAppFloat() {
   return (
     <motion.a
-      href="https://wa.me/9720525427474"
+      href="https://wa.me/972525427474?text=שלום%20אלעד%2C%20פניתי%20דרך%20אתר%20HiTechKids"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="שלחו הודעה בוואטסאפ"

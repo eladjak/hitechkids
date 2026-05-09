@@ -77,7 +77,7 @@ export default function Footer() {
             </div>
             <div className="mt-4">
               <a
-                href="https://wa.me/9720525427474"
+                href="https://wa.me/972525427474?text=שלום%20אלעד%2C%20פניתי%20דרך%20אתר%20HiTechKids"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#25d366]/20 border border-[#25d366]/40 text-[#25d366] rounded-full text-sm font-bold hover:bg-[#25d366]/30 transition-colors"
