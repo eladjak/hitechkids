@@ -26,7 +26,7 @@ const workshops = [
     color: "#ff1493",
     bgGradient: "from-[#ff1493]/20 to-[#ff69b4]/10",
     borderColor: "border-[#ff1493]/40",
-    image: "/images/gallery/kids-create-ai.png",
+    image: "/images/gallery/kids-coding-israeli.jpg",
     description: "כתבו סיפורים מדהימים! נשתמש ב-ChatGPT כחבר יצירתי שעוזר לנו לפתח עלילות, לבנות דמויות ולכתוב בכל סוגי הז'אנרים.",
     skills: ["פיתוח עלילה עם AI", "דמויות ועולמות", "שירה ופרוזה", "פרסום ספר דיגיטלי"],
     ages: "גילאים 8-14",

@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+// Wave-12 (2026-05-10): Replaced generic AI imagery with Israeli-kids photorealistic
+// generations (both Gemini and OpenAI gpt-image-1 saved side-by-side per dual-image rule).
 const galleryItems = [
-  { src: "/images/gallery/kids-learning-ai.png", alt: "ילדים לומדים AI בקייטנה הייטקידס", caption: "לומדים AI - כיף אמיתי! 🤖" },
-  { src: "/images/gallery/kids-create-ai.png", alt: "ילדים יוצרים עם AI בהייטקידס", caption: "יוצרים עם AI - דמיון בלי גבולות ✨" },
-  { src: "/images/gallery/kids-group-activity.png", alt: "פעילות קבוצתית בקייטנת הייטקידס", caption: "עבודת צוות - הכי כיפי! 👥" },
-  { src: "/images/gallery/kids-final-project.png", alt: "פרויקט סיום קייטנת הייטקידס", caption: "פרויקט סיום - גאים בעצמנו! 🏆" },
-  { src: "/images/gallery/kids-creations-ai.png", alt: "יצירות ילדים עם AI בהייטקידס", caption: "היצירות שלנו עם AI 🎨" },
-  { src: "/images/hitechkids-robotics.jpg", alt: "סדנת רובוטיקה בקייטנת הייטקידס", caption: "בונים רובוטים אמיתיים! 🦾" },
+  { src: "/images/gallery/kids-coding-israeli.jpg", alt: "ילדים ישראלים לומדים תכנות בכיתה", caption: "לומדים קוד יחד 💻" },
+  { src: "/images/gallery/kids-robotics-israeli.jpg", alt: "ילדים ישראלים בונים רובוט", caption: "בונים רובוטים בכיתה 🦾" },
+  { src: "/images/gallery/kids-3dprint-israeli.jpg", alt: "ילדים ישראלים סביב מדפסת תלת-מימד", caption: "מדפיסים תלת-מימד! 🖨️" },
+  { src: "/images/gallery/kids-coding-israeli-openai.jpg", alt: "ילדים ישראלים בכיתת תכנות", caption: "כיתת תכנות מודרנית 🚀" },
+  { src: "/images/gallery/kids-robotics-israeli-openai.jpg", alt: "ילדים ישראלים בקבוצת רובוטיקה", caption: "מנדבים יצירתיות 🎨" },
+  { src: "/images/hitechkids-robotics.jpg", alt: "סדנת רובוטיקה בקייטנה", caption: "בונים רובוטים אמיתיים! 🦾" },
 ];
 
 const testimonials = [
