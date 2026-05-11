@@ -142,8 +142,8 @@ export default function Hero() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-[#00d4ff]/30 pulse-glow">
               <Image
-                src="/images/hitechkids-hero-wide.jpg"
-                alt="מרכז טכנולוגיה לילדים - קייטנת הייטקידס"
+                src="/images/gallery/kids-graduation-israeli-openai.jpg"
+                alt="סיום קייטנה - ילדים מציגים פרויקטים גמורים"
                 width={700}
                 height={450}
                 className="w-full object-cover"

@@ -4,14 +4,19 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-// Wave-12 (2026-05-10): Replaced generic AI imagery with Israeli-kids photorealistic
-// generations (both Gemini and OpenAI gpt-image-1 saved side-by-side per dual-image rule).
+// Wave-15d (2026-05-11): 11-image gallery with fresh OpenAI + Gemini Israeli kids scenes
+// (coding/robotics/3dprint/presentation/makerspace/VR/graduation) — dual-model rule.
 const galleryItems = [
-  { src: "/images/gallery/kids-coding-israeli.jpg", alt: "ילדים ישראלים לומדים תכנות בכיתה", caption: "לומדים קוד יחד 💻" },
-  { src: "/images/gallery/kids-robotics-israeli.jpg", alt: "ילדים ישראלים בונים רובוט", caption: "בונים רובוטים בכיתה 🦾" },
+  { src: "/images/gallery/kids-coding-israeli-openai.jpg", alt: "ילדים ישראלים בכיתת תכנות", caption: "לומדים קוד יחד 💻" },
+  { src: "/images/gallery/kids-robotics-israeli-openai.jpg", alt: "ילדים ישראלים בקבוצת רובוטיקה", caption: "בונים רובוטים בכיתה 🦾" },
   { src: "/images/gallery/kids-3dprint-israeli.jpg", alt: "ילדים ישראלים סביב מדפסת תלת-מימד", caption: "מדפיסים תלת-מימד! 🖨️" },
-  { src: "/images/gallery/kids-coding-israeli-openai.jpg", alt: "ילדים ישראלים בכיתת תכנות", caption: "כיתת תכנות מודרנית 🚀" },
-  { src: "/images/gallery/kids-robotics-israeli-openai.jpg", alt: "ילדים ישראלים בקבוצת רובוטיקה", caption: "מנדבים יצירתיות 🎨" },
+  { src: "/images/gallery/kids-presentation-israeli-openai.jpg", alt: "ילדים מציגים פרויקט סיום על במה", caption: "פרויקט סיום על הבמה 🎤" },
+  { src: "/images/gallery/kids-makerspace-israeli-openai.jpg", alt: "ילדים בחדר מייקרספייס מודרני", caption: "מייקרספייס: יוצרים בלי גבולות 🛠️" },
+  { src: "/images/gallery/kids-vr-israeli-openai.jpg", alt: "ילדים עם משקפי מציאות מדומה", caption: "מציאות מדומה — חוויה חינוכית 🥽" },
+  { src: "/images/gallery/kids-graduation-israeli-openai.jpg", alt: "סיום קייטנה — ילדים עם פרויקטים", caption: "טקס סיום — גאים בעצמנו! 🎓" },
+  { src: "/images/gallery/kids-coding-israeli.jpg", alt: "ילדים ישראלים לומדים תכנות בכיתה", caption: "כיתת תכנות אחר הצהריים 🚀" },
+  { src: "/images/gallery/kids-robotics-israeli.jpg", alt: "ילדים בונים רובוט יחד", caption: "עבודת צוות — חזקים יחד 🤖" },
+  { src: "/images/gallery/kids-presentation-israeli-gemini.jpg", alt: "ילדים מציגים בפני קהל", caption: "הופעת בכורה לפרויקט 🌟" },
   { src: "/images/hitechkids-robotics.jpg", alt: "סדנת רובוטיקה בקייטנה", caption: "בונים רובוטים אמיתיים! 🦾" },
 ];
 
