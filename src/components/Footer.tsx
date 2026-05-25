@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -54,15 +55,19 @@ export default function Footer() {
                 { label: "גלריה", href: "#gallery" },
                 { label: "להורים", href: "#parents" },
                 { label: "שאלות ותשובות", href: "#faq" },
+                { label: "בלוג", href: "/blog" },
                 { label: "הרשמה", href: "#register" },
               ].map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-white/50 hover:text-[#00d4ff] text-sm transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith("/") ? (
+                    <Link href={link.href} className="text-white/50 hover:text-[#00d4ff] text-sm transition-colors">
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a href={link.href} className="text-white/50 hover:text-[#00d4ff] text-sm transition-colors">
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -72,8 +77,13 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-4">יצירת קשר</h4>
             <div className="space-y-3 text-sm text-white/50">
-              <p>📞 052-542-7474</p>
-              <p>✉️ eladhiteclearning@gmail.com</p>
+              <p dir="ltr" className="text-right">📞 052-542-7474</p>
+              <p>
+                ✉️{" "}
+                <a href="mailto:hello@hitechkids.eladjak.com" dir="ltr" className="hover:text-[#00d4ff] transition-colors">
+                  hello@hitechkids.eladjak.com
+                </a>
+              </p>
               <p>📍 מגדל העמק, ישראל</p>
               <p>🕐 ראשון-חמישי 8:30-16:00</p>
             </div>
@@ -96,8 +106,8 @@ export default function Footer() {
             © {currentYear} הייטקידס. כל הזכויות שמורות.
           </p>
           <div className="flex gap-6 text-sm text-white/30">
-            <span className="cursor-default">תנאי שימוש</span>
-            <span className="cursor-default">מדיניות פרטיות</span>
+            <Link href="/privacy" className="hover:text-white/60 transition-colors">מדיניות פרטיות</Link>
+            <Link href="/blog" className="hover:text-white/60 transition-colors">בלוג</Link>
             <a href="#faq" className="hover:text-white/60 transition-colors">נגישות</a>
           </div>
         </div>

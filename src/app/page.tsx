@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import FAQChat from "@/components/FAQChat";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import SectionDivider from "@/components/SectionDivider";
 
 const faqEntries: { q: string; a: string }[] = [
   { q: "מה הגיל המתאים לקייטנה?", a: "הקייטנה מתאימה לגילאים 8-15. יש קבוצות נפרדות לגילאים 8-11 ו-12-15, כדי שכל ילד יהיה עם חברים בגילו." },
@@ -62,6 +63,20 @@ const jsonLd = {
         acceptedAnswer: { "@type": "Answer", text: f.a },
       })),
     },
+    ...[
+      { name: "סדנת בינה מלאכותית (AI)", desc: "יצירת תמונות עם AI, ChatGPT ו-Claude, בוטים חכמים — לגילאי 9-15." },
+      { name: "סדנת כתיבה יצירתית עם ChatGPT", desc: "פיתוח עלילה, דמויות, שירה ופרוזה ופרסום ספר דיגיטלי — לגילאי 8-14." },
+      { name: "סדנת תכנות", desc: "Python בסיסי, Scratch ואנימציות, פיתוח משחקים ופרויקט אישי — לגילאי 8-15." },
+      { name: "סדנת רובוטיקה", desc: "LEGO Mindstorms, Arduino, חיישנים ומנועים ותחרות רובוטים — לגילאי 10-15." },
+    ].map((c, i) => ({
+      "@type": "Course",
+      "@id": `https://hitechkids.eladjak.com/#course-${i + 1}`,
+      name: c.name,
+      description: c.desc,
+      inLanguage: "he-IL",
+      provider: { "@id": "https://hitechkids.eladjak.com/#org" },
+      offers: { "@type": "Offer", priceCurrency: "ILS", price: "890", category: "קייטנת קיץ" },
+    })),
   ],
 };
 
@@ -77,8 +92,10 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Workshops />
+        <SectionDivider />
         <Gallery />
         <ForParents />
+        <SectionDivider />
         <Registration />
         <FAQ />
         <FAQChat />

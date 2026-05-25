@@ -7,7 +7,7 @@ export default function Hero() {
   const floatingEmojis = ["🤖", "💻", "🚀", "⚡", "🎮", "🧠", "✨", "🌟", "💡", "🎯"];
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0d0620]">
+    <section className="relative min-h-dvh flex items-center overflow-hidden bg-[#0d0620]">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a0a3c] via-[#0d0620] to-[#001a2e]" />
       

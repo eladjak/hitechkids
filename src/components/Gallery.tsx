@@ -78,15 +78,17 @@ export default function Gallery() {
         {/* Gallery grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
           {galleryItems.map((item, index) => (
-            <motion.div
+            <motion.button
               key={index}
+              type="button"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.03 }}
               onClick={() => setSelected(index)}
-              className="relative rounded-xl overflow-hidden cursor-pointer group aspect-square"
+              aria-label={`הגדל תמונה: ${item.alt}`}
+              className="relative rounded-xl overflow-hidden cursor-pointer group aspect-square text-right"
             >
               <Image
                 src={item.src}
@@ -101,7 +103,7 @@ export default function Gallery() {
               <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-[#00d4ff]/30 border border-[#00d4ff]/60 flex items-center justify-center text-sm opacity-0 group-hover:opacity-100 transition-opacity">
                 🔍
               </div>
-            </motion.div>
+            </motion.button>
           ))}
         </div>
 
@@ -135,6 +137,7 @@ export default function Gallery() {
               </div>
               <button
                 onClick={() => setSelected(null)}
+                aria-label="סגור תמונה מוגדלת"
                 className="absolute top-4 left-4 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80 transition-colors"
               >
                 ✕

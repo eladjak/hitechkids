@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const pricingPlans = [
   {
@@ -90,6 +91,22 @@ export default function ForParents() {
           <p className="text-xl text-white/60 max-w-2xl mx-auto">
             הבטיחות של הילדים שלכם היא הדבר הכי חשוב לנו
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="relative max-w-3xl mx-auto mb-16 rounded-3xl overflow-hidden border border-[#ffe600]/20 shadow-xl shadow-[#ffe600]/10"
+        >
+          <Image
+            src="/images/illustrations/parents-safe.jpg"
+            alt="מדריך עוזר לקבוצת ילדים שמחים מול מחשבים בכיתה בטוחה ומוארת"
+            width={960}
+            height={640}
+            className="w-full object-cover"
+          />
         </motion.div>
 
         {/* Safety section */}

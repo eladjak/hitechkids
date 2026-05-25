@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const SUGGESTED = [
   "מה הילד שלי לומד?",
@@ -61,10 +62,30 @@ export default function FAQChat() {
         </motion.div>
 
         <div className="rounded-3xl shadow-2xl overflow-hidden bg-white border-4 border-yellow-300">
+          {/* Chat header with friendly bot avatar */}
+          <div className="flex items-center gap-3 px-5 py-3 bg-purple-700 text-white">
+            <span className="relative grid place-items-center size-10 rounded-full bg-white/15 overflow-hidden shrink-0">
+              <Image src="/images/illustrations/mascot-robot.jpg" alt="" width={40} height={40} className="size-10 object-cover" aria-hidden />
+            </span>
+            <div className="leading-tight">
+              <div className="font-black text-sm">העוזר של הייטקידס</div>
+              <div className="flex items-center gap-1.5 text-xs text-green-300">
+                <span className="size-2 rounded-full bg-green-400 animate-pulse" /> מחובר עכשיו
+              </div>
+            </div>
+          </div>
           <div className="px-5 py-4 overflow-y-auto space-y-3" style={{ minHeight: "300px", maxHeight: "400px" }}>
             {messages.length === 0 && !loading && (
-              <div className="text-center py-6 text-gray-400 text-sm">
-                בחר שאלה למטה או כתוב את שלך 🚀
+              <div className="text-center py-4 text-gray-500">
+                <Image
+                  src="/images/illustrations/empty-state-chat.jpg"
+                  alt="רובוט ידידותי מזמין אתכם לשאול שאלה"
+                  width={140}
+                  height={140}
+                  className="mx-auto mb-3 size-32 object-contain rounded-2xl"
+                />
+                <p className="text-sm font-medium">היי! יש לכם שאלה על הקייטנה? 🚀</p>
+                <p className="text-xs text-gray-400 mt-1">בחרו שאלה למטה או כתבו את שלכם</p>
               </div>
             )}
             {messages.map((m, i) => (
