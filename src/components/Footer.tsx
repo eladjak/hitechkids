@@ -26,15 +26,17 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 mt-4">
               {[
-                { icon: "📘", label: "Facebook", href: "#" },
-                { icon: "📸", label: "Instagram", href: "#" },
-                { icon: "🎵", label: "TikTok", href: "#" },
-                { icon: "📺", label: "YouTube", href: "#" },
+                { icon: "📘", label: "Facebook", href: "https://facebook.com/eladjak1" },
+                { icon: "📺", label: "YouTube", href: "https://www.youtube.com/@KamiMesenger" },
+                { icon: "💬", label: "WhatsApp", href: "https://wa.me/972525427474" },
+                { icon: "✉️", label: "אימייל", href: "mailto:eladhiteclearning@gmail.com" },
               ].map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#00d4ff]/20 flex items-center justify-center text-lg transition-colors"
                 >
                   {social.icon}
