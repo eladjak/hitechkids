@@ -1,8 +1,26 @@
 # hitechkids - Progress
 
-## Status: Production - LIVE (share-ready upgrade shipped)
-## Last Updated: 2026-05-25
+## Status: Production - LIVE
+## Last Updated: 2026-05-26
 ## URL: https://hitechkids.eladjak.com
+
+## 2026-05-26 — 3 fixes shipped + verified live (commits 61e2938, 85b0c72)
+- [x] **(א) Responsive bug fixed (root cause).** Hero `<section>` is flex; its content div
+  is a flex item with default `min-width:auto`. The marquee's `width:max-content` propagated
+  up as min-content → forced the content div to 1280px even at 320px viewport → all hero text
+  right-clipped under `overflow-hidden` (no page-scroll tell). Fix: `w-full min-w-0` on the
+  flex item (Hero.tsx). Verified live 320/375/768/1280px: contentW=viewport, 0 overflow.
+- [x] **(ב) Garbled-Hebrew image replaced.** `kids-graduation-israeli-openai.jpg` banner read
+  gibberish "מכינת חניית". Regenerated via Gemini (nano-banana, NO-text prompt to avoid
+  garbling). Used in Hero + Gallery. Backup in `.backups/`. Live 200, 939KB.
+- [x] **(ג) Static FAQ removed → AI chat only.** Deleted FAQ.tsx + render; kept FAQChat.
+  Navbar "שאלות" repointed `#faq` → `#faq-chat`. FAQPage JSON-LD retained for SEO.
+  Live: old FAQ heading=0 hits, chat heading=1.
+- [ ] **Supabase separation — BLOCKED on creds.** New project `klwcariyineeqpdfotqh` exists
+  (URL+anon known) but NO db-password/service-role locally → can't apply DDL. Did NOT repoint
+  Vercel env (would break live form before table exists). One-click finish-kit prepared:
+  `scripts/separate-project/03-FINISH-KIT.md`. Needs Elad: paste schema in SQL editor, OR give
+  Claude the new-project DB password / service-role key.
 
 ## Share-Ready Upgrade (2026-05-25)
 - [x] AI FAQ chat answering live (GEMINI_API_KEY set in Vercel); server route hardened per council (rate-limit, input/turn caps, kid-safe prompt, Gemini safety settings, 12s timeout, no PII echo). Warmer UX (bot avatar + illustrated empty state). Static FAQ kept as no-JS fallback + FAQPage schema.
