@@ -4,7 +4,6 @@ import Workshops from "@/components/Workshops";
 import Gallery from "@/components/Gallery";
 import ForParents from "@/components/ForParents";
 import Registration from "@/components/Registration";
-import FAQ from "@/components/FAQ";
 import FAQChat from "@/components/FAQChat";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -97,7 +96,6 @@ export default function Home() {
         <ForParents />
         <SectionDivider />
         <Registration />
-        <FAQ />
         <FAQChat />
         <Footer />
       </main>

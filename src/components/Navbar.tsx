@@ -19,7 +19,7 @@ export default function Navbar() {
     { href: "#workshops", label: "סדנאות" },
     { href: "#gallery", label: "גלריה" },
     { href: "#parents", label: "להורים" },
-    { href: "#faq", label: "שאלות" },
+    { href: "#faq-chat", label: "שאלות" },
     { href: "#register", label: "הרשמה" },
   ];
 
