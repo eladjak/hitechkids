@@ -82,7 +82,10 @@ export async function POST(req: Request) {
         headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
         body: JSON.stringify({
           contents: [{ parts: [{ text: fullPrompt }] }],
-          generationConfig: { temperature: 0.6, maxOutputTokens: 350 },
+          // thinkingBudget:0 disables Gemini 2.5 Flash "thinking" — otherwise thinking tokens
+          // consume the whole maxOutputTokens budget (finishReason=MAX_TOKENS) and the visible
+          // answer is truncated mid-sentence (the "chat doesn't work" bug, 2026-05-27).
+          generationConfig: { temperature: 0.6, maxOutputTokens: 600, thinkingConfig: { thinkingBudget: 0 } },
           safetySettings: [
             { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
             { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
