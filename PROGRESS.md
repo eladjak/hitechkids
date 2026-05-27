@@ -4,6 +4,20 @@
 ## Last Updated: 2026-05-26
 ## URL: https://hitechkids.eladjak.com
 
+## 2026-05-27 — chat bug fixed + Supabase separation DONE (verified live)
+- [x] **AI chat bug fixed.** "Chat doesn't work" = answers truncated mid-sentence. Root cause:
+  Gemini 2.5 Flash "thinking" consumed the whole `maxOutputTokens:350` (thoughtsTokenCount=332 →
+  finishReason MAX_TOKENS). Fix: `thinkingConfig.thinkingBudget:0` + maxOutputTokens→600, and
+  **upgraded model gemini-2.5-flash → gemini-3.5-flash** (latest GA, better+cheaper). Verified live
+  (clean UTF-8): complete accurate Hebrew answer.
+- [x] **Supabase SEPARATION done.** New standalone project `klwcariyineeqpdfotqh`. Applied
+  `scripts/separate-project/01-...schema.sql` via direct Postgres (registrations + RLS + anon
+  INSERT-only). Repointed Vercel env (URL+anon `sb_publishable_…`) + redeployed. E2E live:
+  POST /api/register → success:true → row confirmed in NEW project → test row deleted (0 rows).
+  Old shared project (Sipurai `furviizyohryyqubosut`) no longer used by HiTechKids. Old leads NOT
+  migrated (no old-project creds; small marketing volume — migrate later if needed). After 24-48h
+  stable, drop `registrations` from the old project (lets Sipurai re-lock anon).
+
 ## 2026-05-26 — 3 fixes shipped + verified live (commits 61e2938, 85b0c72)
 - [x] **(א) Responsive bug fixed (root cause).** Hero `<section>` is flex; its content div
   is a flex item with default `min-width:auto`. The marquee's `width:max-content` propagated

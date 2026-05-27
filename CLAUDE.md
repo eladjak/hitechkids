@@ -5,8 +5,11 @@
 חלק ממערך EduTech אבל פרויקט נפרד (EduTech #7 הוקם על אפיון אחר).
 
 ## Tech Stack
-- Next.js 15 + TypeScript + Tailwind CSS 4
-- Supabase (הרשמה)
+- Next.js 16 + TypeScript + Tailwind CSS 4
+- Supabase (הרשמה) — **STANDALONE project `klwcariyineeqpdfotqh`** (separated 27.5.2026 from the
+  shared Sipurai project `furviizyohryyqubosut`, which had broken HiTechKids registration via a
+  shared-anon REVOKE). anon = INSERT-only, RLS on. DB-admin pass in `.env.db-admin.local` (gitignored).
+- AI FAQ chat: `gemini-3.5-flash` via `/api/chat-faq` (thinkingBudget:0 — else thinking truncates answers).
 
 ## סגנון
 - ילדותי, צבעוני, כיפי
