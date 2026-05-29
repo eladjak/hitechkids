@@ -108,6 +108,7 @@ export default function Footer() {
           <div className="flex gap-6 text-sm text-white/30">
             <Link href="/privacy" className="hover:text-white/60 transition-colors">מדיניות פרטיות</Link>
             <Link href="/blog" className="hover:text-white/60 transition-colors">בלוג</Link>
+            <a href="/cv-elad-yaakobovitch-he.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">קורות חיים</a>
             <a href="#faq" className="hover:text-white/60 transition-colors">נגישות</a>
           </div>
         </div>
