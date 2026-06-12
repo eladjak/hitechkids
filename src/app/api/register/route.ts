@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 type RegistrationData = {
   childName: string;
@@ -40,16 +40,27 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Save to Supabase
-  const { error: dbError } = await supabase.from("registrations").insert({
-    child_name: data.childName,
-    child_age: age,
-    parent_name: data.parentName,
-    phone: phoneClean,
-    email: data.email || null,
-    workshop: data.workshop,
-    notes: data.notes || null,
-  });
+  // Save to Supabase (client instantiated lazily; missing config is handled)
+  let dbError: { message: string } | null = null;
+  try {
+    const supabase = getSupabase();
+    const res = await supabase.from("registrations").insert({
+      child_name: data.childName,
+      child_age: age,
+      parent_name: data.parentName,
+      phone: phoneClean,
+      email: data.email || null,
+      workshop: data.workshop,
+      notes: data.notes || null,
+    });
+    dbError = res.error;
+  } catch (e) {
+    console.error("[HiTechKids] Supabase init error:", (e as Error).message);
+    return NextResponse.json(
+      { error: "שירות ההרשמה אינו זמין כרגע. נסו שוב או צרו קשר בטלפון 052-542-7474." },
+      { status: 503 }
+    );
+  }
 
   if (dbError) {
     console.error("[HiTechKids] Supabase error:", dbError.message);
