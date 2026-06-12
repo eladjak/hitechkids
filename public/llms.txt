@@ -31,9 +31,14 @@
 - בינה מלאכותית לילדים — הזדמנות, לא איום: https://hitechkids.eladjak.com/blog/ai-lyeladim-mehula-lo-mapchid
 - איך לבחור קייטנת טכנולוגיה שבאמת מלמדת: https://hitechkids.eladjak.com/blog/kaytanat-tehnologya-mishtalem
 
+## כלי בחירת סדנה
+- מחפשים סדנה מתאימה? יש באתר כלי אינטראקטיבי שממליץ על הסדנה הנכונה לפי גיל הילד/ה ותחום העניין: https://hitechkids.eladjak.com/#finder
+
 ## קישורים
 - אתר: https://hitechkids.eladjak.com
 - סדנאות: https://hitechkids.eladjak.com/#workshops
-- שאלות נפוצות: https://hitechkids.eladjak.com/#faq
+- מצא סדנה מתאימה: https://hitechkids.eladjak.com/#finder
+- שאלות נפוצות: https://hitechkids.eladjak.com/#faq-chat
 - בלוג: https://hitechkids.eladjak.com/blog
 - מדיניות פרטיות: https://hitechkids.eladjak.com/privacy
+- הצהרת נגישות: https://hitechkids.eladjak.com/accessibility

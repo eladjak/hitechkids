@@ -54,7 +54,7 @@ export default function Footer() {
                 { label: "סדנאות", href: "#workshops" },
                 { label: "גלריה", href: "#gallery" },
                 { label: "להורים", href: "#parents" },
-                { label: "שאלות ותשובות", href: "#faq" },
+                { label: "שאלות ותשובות", href: "#faq-chat" },
                 { label: "בלוג", href: "/blog" },
                 { label: "הרשמה", href: "#register" },
               ].map((link) => (
@@ -109,7 +109,7 @@ export default function Footer() {
             <Link href="/privacy" className="hover:text-white/60 transition-colors">מדיניות פרטיות</Link>
             <Link href="/blog" className="hover:text-white/60 transition-colors">בלוג</Link>
             <a href="/cv-elad-yaakobovitch-he.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">קורות חיים</a>
-            <a href="#faq" className="hover:text-white/60 transition-colors">נגישות</a>
+            <Link href="/accessibility" className="hover:text-white/60 transition-colors">הצהרת נגישות</Link>
           </div>
         </div>
 

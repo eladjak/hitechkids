@@ -8,6 +8,7 @@ import FAQChat from "@/components/FAQChat";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import SectionDivider from "@/components/SectionDivider";
+import WorkshopFinder from "@/components/WorkshopFinder";
 
 const faqEntries: { q: string; a: string }[] = [
   { q: "מה הגיל המתאים לקייטנה?", a: "הקייטנה מתאימה לגילאים 8-15. יש קבוצות נפרדות לגילאים 8-11 ו-12-15, כדי שכל ילד יהיה עם חברים בגילו." },
@@ -91,6 +92,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Workshops />
+        <WorkshopFinder />
         <SectionDivider />
         <Gallery />
         <ForParents />

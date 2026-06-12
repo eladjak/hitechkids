@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type FormState = {
   childName: string;
@@ -33,8 +33,26 @@ export default function Registration() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [prefilled, setPrefilled] = useState(false);
 
   const [error, setError] = useState<string | null>(null);
+
+  // Listen for the Workshop Finder pre-fill event (decoupled cross-component wiring).
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent<{ workshop?: string; childAge?: string }>).detail;
+      if (!detail) return;
+      setForm((prev) => ({
+        ...prev,
+        workshop: detail.workshop ?? prev.workshop,
+        childAge: detail.childAge ?? prev.childAge,
+      }));
+      setPrefilled(true);
+      window.setTimeout(() => setPrefilled(false), 4000);
+    };
+    window.addEventListener("hitechkids:prefill-registration", handler);
+    return () => window.removeEventListener("hitechkids:prefill-registration", handler);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -120,6 +138,17 @@ export default function Registration() {
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+              {prefilled && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-[#39ff14]/15 border border-[#39ff14]/40 rounded-xl px-4 py-3 text-[#39ff14] text-sm text-center font-medium"
+                  role="status"
+                  aria-live="polite"
+                >
+                  ✨ מילאנו עבורכם את הסדנה והגיל לפי ההמלצה — אפשר לשנות בכל רגע.
+                </motion.div>
+              )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-[#00d4ff] font-bold text-sm mb-2">

@@ -1,5 +1,35 @@
 # hitechkids - Progress
 
+## 2026-06-13 — deep-iteration: interactive Workshop Finder + a11y page + dead-link fixes
+**Site was already live + polished** (hitechkids.eladjak.com → 200, Vercel DNS healthy). Deep-iteration
+focused on web-paradigm-shift interactivity + closing real gaps:
+- [x] **NEW: Workshop Finder** (`src/components/WorkshopFinder.tsx`) — interactive "find the right
+  workshop for your kid" tool. Parent sets age (8-15 slider) + interest (4 chips) → scored
+  recommendation → CTA pre-fills the registration form (decoupled via `window` CustomEvent
+  `hitechkids:prefill-registration`; Registration listens + shows a confirmation banner). On-brand,
+  RTL, a11y (aria-pressed/role=group/role=status, reduced-motion inherited). Wired into page after
+  Workshops + nav link "מצא סדנה" (#finder) + llms.txt entry.
+- [x] **Verified E2E** (agent-browser, local prod build): age 10 + "תכנות ומשחקים" → recommends
+  "תכנות Python ו-Scratch", prefill sets registration select=that workshop + age=10. Screenshot OK.
+- [x] **Dead-link fixes (definition-of-done):** Footer "שאלות ותשובות" `#faq` → `#faq-chat` (static
+  FAQ was removed 26.5, anchor was dead); Footer "נגישות" `#faq` → real `/accessibility` page.
+- [x] **NEW: /accessibility** — real Israeli accessibility statement (ת"י 5568 / WCAG 2.1 AA,
+  contact + a11y coordinator). Added to sitemap + llms.txt.
+- [x] Committed pending favicon/og/apple-touch/logo assets (referenced by layout.tsx `icons` metadata).
+- [x] Gates: tsc 0, build 0 (14 routes). Local prod smoke green.
+- NEEDS ELAD: real prices/schedule/testimonials are still illustrative placeholders (200+ בוגרים,
+  4.9/5, prices ₪890-2990, schedule 8:30-16:00) — confirm or replace before peak marketing.
+  Also: hiteclearning.co.il DNS is dead (separate domain, NOT this repo — this site is on
+  hitechkids.eladjak.com which is healthy).
+
+---
+
+## 2026-05-28 — entry from deep-work session
+**Logo concept approved by Elad.** `hitechkids-concept-1.png` (gpt-image-2): robot mascot with graduation cap + kid-friendly palette (electric blue / neon green / sunny pink / yellow). Full asset set built at `~/Documents/Logos/hitechkids/final/{raster,vector,favicon,og}/` — 9 PNG sizes × color/grayscale/B+W + favicon set + apple-touch + OG 1200×630. Source-of-truth in concepts/.
+
+---
+
+
 ## Status: Production - LIVE
 ## Last Updated: 2026-05-26
 ## URL: https://hitechkids.eladjak.com

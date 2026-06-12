@@ -17,6 +17,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "#workshops", label: "סדנאות" },
+    { href: "#finder", label: "מצא סדנה" },
     { href: "#gallery", label: "גלריה" },
     { href: "#parents", label: "להורים" },
     { href: "#faq-chat", label: "שאלות" },
