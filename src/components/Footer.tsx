@@ -71,6 +71,28 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+
+            {/* Parent resources — real value + external citation links (GEO) */}
+            <h4 className="text-white font-bold mb-4 mt-8">משאבים להורים</h4>
+            <ul className="space-y-2">
+              {[
+                { label: "Scratch — תכנות ויזואלי לילדים", href: "https://scratch.mit.edu" },
+                { label: "Code.org — שיעורי קוד חינם", href: "https://code.org" },
+                { label: "Python — השפה שמלמדים בקייטנה", href: "https://www.python.org" },
+                { label: "אודות אלעד יעקובוביץ'", href: "https://www.eladjak.com/about" },
+              ].map((r) => (
+                <li key={r.href}>
+                  <a
+                    href={r.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/50 hover:text-[#00d4ff] text-sm transition-colors"
+                  >
+                    {r.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact */}

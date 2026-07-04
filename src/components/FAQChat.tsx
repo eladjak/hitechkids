@@ -65,7 +65,7 @@ export default function FAQChat() {
           {/* Chat header with friendly bot avatar */}
           <div className="flex items-center gap-3 px-5 py-3 bg-purple-700 text-white">
             <span className="relative grid place-items-center size-10 rounded-full bg-white/15 overflow-hidden shrink-0">
-              <Image src="/images/illustrations/mascot-robot.jpg" alt="" width={40} height={40} className="size-10 object-cover" aria-hidden />
+              <Image src="/images/illustrations/mascot-robot.jpg" alt="רובוט המסקוט של הייטקידס" width={40} height={40} className="size-10 object-cover" />
             </span>
             <div className="leading-tight">
               <div className="font-black text-sm">העוזר של הייטקידס</div>
