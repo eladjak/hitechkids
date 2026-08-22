@@ -140,9 +140,11 @@ export default function Workshops() {
                       key={skill}
                       className="text-xs px-3 py-1 rounded-full font-medium"
                       style={{
-                        backgroundColor: `${workshop.color}20`,
+                        // A tint of the chip's own colour sat too close to the
+                        // text on it. Dark pill, colour kept on text + border.
+                        backgroundColor: "rgba(13, 6, 32, 0.75)",
                         color: workshop.color,
-                        border: `1px solid ${workshop.color}40`,
+                        border: `1px solid ${workshop.color}66`,
                       }}
                     >
                       {skill}

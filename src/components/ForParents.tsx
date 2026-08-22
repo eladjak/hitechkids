@@ -216,7 +216,7 @@ export default function ForParents() {
                     background: plan.popular
                       ? `linear-gradient(135deg, ${plan.color}, #ffe600)`
                       : `${plan.color}20`,
-                    color: plan.popular ? "white" : plan.color,
+                    color: plan.popular ? "#0a0418" : plan.color,
                     border: `2px solid ${plan.color}`,
                   }}
                 >
