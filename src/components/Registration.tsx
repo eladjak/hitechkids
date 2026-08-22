@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type FormState = {
   childName: string;
@@ -36,6 +36,18 @@ export default function Registration() {
   const [prefilled, setPrefilled] = useState(false);
 
   const [error, setError] = useState<string | null>(null);
+  const errorRef = useRef<HTMLDivElement>(null);
+  const successRef = useRef<HTMLHeadingElement>(null);
+
+  // Submitting is the moment the outcome has to reach someone who cannot see
+  // the form. role=alert/status announces it; moving focus puts a keyboard or
+  // screen-reader user AT the message instead of at the top of the document.
+  useEffect(() => {
+    if (error) errorRef.current?.focus();
+  }, [error]);
+  useEffect(() => {
+    if (submitted) successRef.current?.focus();
+  }, [submitted]);
 
   // Listen for the Workshop Finder pre-fill event (decoupled cross-component wiring).
   useEffect(() => {
@@ -123,12 +135,18 @@ export default function Registration() {
         >
           {submitted ? (
             <motion.div
+              role="status"
+              aria-atomic="true"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-12"
             >
               <div className="text-7xl mb-6">🎉</div>
-              <h3 className="text-3xl font-black text-white mb-4">
+              <h3
+                ref={successRef}
+                tabIndex={-1}
+                className="text-3xl font-black text-white mb-4 focus:outline-none"
+              >
                 נרשמתם בהצלחה!
               </h3>
               <p className="text-white/60 text-lg mb-6">
@@ -274,8 +292,15 @@ export default function Registration() {
               </div>
 
               {error && (
-                <div className="bg-red-500/20 border border-red-500/40 rounded-xl px-4 py-3 text-red-300 text-sm text-center">
-                  {error}
+                <div
+                  ref={errorRef}
+                  id="reg-form-error"
+                  role="alert"
+                  aria-atomic="true"
+                  tabIndex={-1}
+                  className="bg-red-500/20 border border-red-500/40 rounded-xl px-4 py-3 text-red-200 text-sm text-center focus:outline-none focus:ring-2 focus:ring-red-300"
+                >
+                  <span aria-hidden="true">⚠ </span>{error}
                 </div>
               )}
 
@@ -284,6 +309,7 @@ export default function Registration() {
                 disabled={loading}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                aria-describedby={error ? "reg-form-error" : undefined}
                 className="w-full bg-gradient-to-l from-[#00d4ff] to-[#0080ff] text-[#0a0418] font-black text-xl py-4 rounded-2xl hover:opacity-90 transition-opacity disabled:opacity-60 shadow-lg"
                 style={{ boxShadow: "0 4px 30px #00d4ff40" }}
               >
