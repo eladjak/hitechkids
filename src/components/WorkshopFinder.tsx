@@ -208,7 +208,7 @@ export default function WorkshopFinder() {
               onClick={() => setRevealed(true)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-l from-[#00d4ff] to-[#0080ff] text-white font-black text-xl py-4 rounded-2xl hover:opacity-90 transition-opacity shadow-lg"
+              className="w-full bg-gradient-to-l from-[#00d4ff] to-[#0080ff] text-[#0a0418] font-black text-xl py-4 rounded-2xl hover:opacity-90 transition-opacity shadow-lg"
               style={{ boxShadow: "0 4px 30px #00d4ff40" }}
             >
               ✨ הראו לי את הסדנה המתאימה

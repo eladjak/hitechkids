@@ -120,7 +120,7 @@ export default function Hero() {
             >
               <a
                 href="#register"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#ff1493] to-[#ffe600] text-white font-black text-lg rounded-full hover:opacity-90 transition-all duration-200 hover:scale-105 shadow-lg shadow-[#ff1493]/30"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#ff1493] to-[#ffe600] text-[#0a0418] font-black text-lg rounded-full hover:opacity-90 transition-all duration-200 hover:scale-105 shadow-lg shadow-[#ff1493]/30"
               >
                 🚀 הירשם עכשיו!
               </a>

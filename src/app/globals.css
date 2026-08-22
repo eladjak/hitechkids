@@ -20,6 +20,9 @@ body {
 
 html {
   scroll-behavior: smooth;
+  /* The header is fixed at 80px. Without this, anchor jumps and keyboard
+     focus can land a target underneath it. */
+  scroll-padding-top: 96px;
 }
 
 ::-webkit-scrollbar {

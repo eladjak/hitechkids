@@ -185,7 +185,7 @@ export default function ForParents() {
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 right-1/2 translate-x-1/2 bg-gradient-to-r from-[#ff1493] to-[#ffe600] text-white text-sm font-black px-6 py-1.5 rounded-full">
+                  <div className="absolute -top-4 right-1/2 translate-x-1/2 bg-gradient-to-r from-[#ff1493] to-[#ffe600] text-[#0a0418] text-sm font-black px-6 py-1.5 rounded-full">
                     🏆 הכי פופולרי!
                   </div>
                 )}
@@ -193,11 +193,11 @@ export default function ForParents() {
                 <h4 className="text-xl font-black text-white mb-2 text-center">{plan.name}</h4>
                 
                 <div className="text-center mb-6">
-                  <div className="text-white/40 text-sm line-through mb-1">₪{plan.originalPrice}</div>
+                  <div className="text-white/60 text-sm line-through mb-1">₪{plan.originalPrice}</div>
                   <div className="text-5xl font-black" style={{ color: plan.color }}>
                     ₪{plan.price}
                   </div>
-                  <div className="text-white/40 text-sm mt-1">לחודש קיץ</div>
+                  <div className="text-white/60 text-sm mt-1">לחודש קיץ</div>
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -216,7 +216,7 @@ export default function ForParents() {
                     background: plan.popular
                       ? `linear-gradient(135deg, ${plan.color}, #ffe600)`
                       : `${plan.color}20`,
-                    color: plan.popular ? "white" : plan.color,
+                    color: plan.popular ? "#0a0418" : plan.color,
                     border: `2px solid ${plan.color}`,
                   }}
                 >
