@@ -151,10 +151,11 @@ export default function Registration() {
               )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[#00d4ff] font-bold text-sm mb-2">
+                  <label htmlFor="reg-childName" className="block text-[#00d4ff] font-bold text-sm mb-2">
                     שם הילד/ה *
                   </label>
                   <input
+                    id="reg-childName"
                     type="text"
                     name="childName"
                     required
@@ -165,11 +166,13 @@ export default function Registration() {
                   />
                 </div>
                 <div>
-                  <label className="block text-[#00d4ff] font-bold text-sm mb-2">
+                  <label htmlFor="reg-childAge" className="block text-[#00d4ff] font-bold text-sm mb-2">
                     גיל *
                   </label>
                   <input
+                    id="reg-childAge"
                     type="number"
+                    dir="ltr"
                     name="childAge"
                     required
                     min="8"
@@ -184,10 +187,11 @@ export default function Registration() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[#00d4ff] font-bold text-sm mb-2">
+                  <label htmlFor="reg-parentName" className="block text-[#00d4ff] font-bold text-sm mb-2">
                     שם ההורה *
                   </label>
                   <input
+                    id="reg-parentName"
                     type="text"
                     name="parentName"
                     required
@@ -198,10 +202,11 @@ export default function Registration() {
                   />
                 </div>
                 <div>
-                  <label className="block text-[#00d4ff] font-bold text-sm mb-2">
+                  <label htmlFor="reg-phone" className="block text-[#00d4ff] font-bold text-sm mb-2">
                     טלפון *
                   </label>
                   <input
+                    id="reg-phone"
                     type="tel"
                     name="phone"
                     required
@@ -215,10 +220,11 @@ export default function Registration() {
               </div>
 
               <div>
-                <label className="block text-[#00d4ff] font-bold text-sm mb-2">
+                <label htmlFor="reg-email" className="block text-[#00d4ff] font-bold text-sm mb-2">
                   אימייל
                 </label>
                 <input
+                  id="reg-email"
                   type="email"
                   name="email"
                   value={form.email}
@@ -230,10 +236,11 @@ export default function Registration() {
               </div>
 
               <div>
-                <label className="block text-[#00d4ff] font-bold text-sm mb-2">
+                <label htmlFor="reg-workshop" className="block text-[#00d4ff] font-bold text-sm mb-2">
                   איזה סדנה מעניינת אתכם? *
                 </label>
                 <select
+                  id="reg-workshop"
                   name="workshop"
                   required
                   value={form.workshop}
@@ -252,10 +259,11 @@ export default function Registration() {
               </div>
 
               <div>
-                <label className="block text-[#00d4ff] font-bold text-sm mb-2">
+                <label htmlFor="reg-notes" className="block text-[#00d4ff] font-bold text-sm mb-2">
                   הערות / שאלות
                 </label>
                 <textarea
+                  id="reg-notes"
                   name="notes"
                   value={form.notes}
                   onChange={handleChange}
@@ -276,13 +284,13 @@ export default function Registration() {
                 disabled={loading}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-l from-[#00d4ff] to-[#0080ff] text-white font-black text-xl py-4 rounded-2xl hover:opacity-90 transition-opacity disabled:opacity-60 shadow-lg"
+                className="w-full bg-gradient-to-l from-[#00d4ff] to-[#0080ff] text-[#0a0418] font-black text-xl py-4 rounded-2xl hover:opacity-90 transition-opacity disabled:opacity-60 shadow-lg"
                 style={{ boxShadow: "0 4px 30px #00d4ff40" }}
               >
                 {loading ? "שולח..." : "הירשמו עכשיו! 🚀"}
               </motion.button>
 
-              <p className="text-center text-white/40 text-sm">
+              <p className="text-center text-white/60 text-sm">
                 📞 מעדיפים לדבר? התקשרו: 052-542-7474
               </p>
             </form>

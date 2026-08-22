@@ -68,7 +68,7 @@ export default function Navbar() {
             </Link>
             <a
               href="#register"
-              className="mr-4 px-6 py-2 bg-gradient-to-r from-[#ff1493] to-[#ffe600] text-white font-bold rounded-full hover:opacity-90 transition-opacity duration-200 pulse-glow"
+              className="mr-4 px-6 py-2 bg-gradient-to-r from-[#ff1493] to-[#ffe600] text-[#0a0418] font-bold rounded-full hover:opacity-90 transition-opacity duration-200 pulse-glow"
             >
               הירשם עכשיו! 🚀
             </a>
@@ -120,7 +120,7 @@ export default function Navbar() {
               <a
                 href="#register"
                 onClick={() => setMenuOpen(false)}
-                className="px-4 py-3 rounded-lg font-bold text-center bg-gradient-to-r from-[#ff1493] to-[#ffe600] text-white"
+                className="px-4 py-3 rounded-lg font-bold text-center bg-gradient-to-r from-[#ff1493] to-[#ffe600] text-[#0a0418]"
               >
                 הרשמה
               </a>

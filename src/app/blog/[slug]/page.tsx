@@ -105,7 +105,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <p className="text-white/70 mb-6 text-pretty">הסדנאות של קייטנת הייטקידס מחכות לקיץ 2026.</p>
             <Link
               href="/#register"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#ff1493] to-[#ffe600] text-white font-black rounded-full hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#ff1493] to-[#ffe600] text-[#0a0418] font-black rounded-full hover:opacity-90 transition-opacity"
             >
               להרשמה לקייטנה
             </Link>

@@ -102,14 +102,14 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-sm">
+          <p className="text-white/50 text-sm">
             © {currentYear} הייטקידס. כל הזכויות שמורות.
           </p>
-          <div className="flex gap-6 text-sm text-white/30">
-            <Link href="/privacy" className="hover:text-white/60 transition-colors">מדיניות פרטיות</Link>
-            <Link href="/blog" className="hover:text-white/60 transition-colors">בלוג</Link>
-            <a href="/cv-elad-yaakobovitch-he.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">קורות חיים</a>
-            <Link href="/accessibility" className="hover:text-white/60 transition-colors">הצהרת נגישות</Link>
+          <div className="flex gap-6 text-sm text-white/50">
+            <Link href="/privacy" className="hover:text-white transition-colors">מדיניות פרטיות</Link>
+            <Link href="/blog" className="hover:text-white transition-colors">בלוג</Link>
+            <a href="/cv-elad-yaakobovitch-he.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">קורות חיים</a>
+            <Link href="/accessibility" className="hover:text-white transition-colors">הצהרת נגישות</Link>
           </div>
         </div>
 
@@ -118,7 +118,7 @@ export default function Footer() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-8 text-white/20 text-xs"
+          className="text-center mt-8 text-white/50 text-xs"
         >
           עוצב ופותח עם ❤️ לילדים הסקרנים של ישראל
         </motion.div>

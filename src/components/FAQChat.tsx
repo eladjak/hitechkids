@@ -85,7 +85,7 @@ export default function FAQChat() {
                   className="mx-auto mb-3 size-32 object-contain rounded-2xl"
                 />
                 <p className="text-sm font-medium">היי! יש לכם שאלה על הקייטנה? 🚀</p>
-                <p className="text-xs text-gray-400 mt-1">בחרו שאלה למטה או כתבו את שלכם</p>
+                <p className="text-xs text-gray-600 mt-1">בחרו שאלה למטה או כתבו את שלכם</p>
               </div>
             )}
             {messages.map((m, i) => (
@@ -131,6 +131,7 @@ export default function FAQChat() {
           <form onSubmit={(e) => { e.preventDefault(); send() }} className="px-5 py-3 border-t-2 border-purple-100 flex gap-2 items-center bg-yellow-50">
             <input
               type="text"
+              aria-label="שאלה לצ'אט"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="כתוב שאלה..."

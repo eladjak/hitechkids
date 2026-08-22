@@ -117,7 +117,7 @@ export default function Workshops() {
                   {workshop.emoji}
                 </div>
                 {/* Ages badge */}
-                <div className="absolute bottom-4 left-4 bg-[#0d0620]/80 backdrop-blur-sm rounded-full px-3 py-1 text-xs text-white/80 font-medium">
+                <div className="absolute bottom-4 left-4 bg-[#0d0620] rounded-full px-3 py-1 text-xs text-white font-medium">
                   {workshop.ages}
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function Workshops() {
                   <p className="font-bold" style={{ color: workshop.color }}>{workshop.subtitle}</p>
                 </div>
                 
-                <p className="text-white/70 text-sm leading-relaxed mb-4">
+                <p className="text-white text-sm leading-relaxed mb-4">
                   {workshop.description}
                 </p>
 
