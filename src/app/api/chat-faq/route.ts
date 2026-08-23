@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import { aiGuard } from "@/lib/ai-guard";
 
 // Child-facing FAQ chat endpoint.
 // Council verdict (2026-05-25): server-side ONLY — never expose the Gemini key to the
@@ -72,6 +73,14 @@ export async function POST(req: Request) {
       .map((m) => `${m.role === "user" ? "משתמש" : "אסיסטנט"}: ${m.content}`)
       .join("\n")
     const fullPrompt = `${SYSTEM_PROMPT}\n\nשיחה עד כה:\n${conversationText}\n\nאסיסטנט:`
+
+    // Spend guard: public unauthenticated endpoint on Elad's own Gemini key.
+    // Per-IP window plus a SHARED per-site daily ceiling, so the cap holds across
+    // serverless instances rather than resetting on every cold start.
+    const _guard = await aiGuard(req, "hitechkids")
+    if (!_guard.ok) {
+      return NextResponse.json({ content: "העוזר עמוס כרגע — אפשר לנסות שוב מאוחר יותר, או להשאיר פרטים בטופס ונחזור אליכם." })
+    }
 
     const controller = new AbortController()
     const timeout = setTimeout(() => controller.abort(), 12_000)

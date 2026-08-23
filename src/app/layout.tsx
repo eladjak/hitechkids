@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { MotionProvider } from "@/components/MotionProvider";
 
 export const metadata: Metadata = {
   title: "הייטקידס - קייטנת טכנולוגיה לילדים | קיץ 2026",
@@ -65,7 +66,7 @@ export default function RootLayout({
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[100] focus:bg-[#00d4ff] focus:text-black focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">
           דלג לתוכן הראשי
         </a>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );
